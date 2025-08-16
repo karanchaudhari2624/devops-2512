@@ -1,8 +1,8 @@
-name: first flow 
+name: on push
 on: push
 jobs:
-  build:
+  run-on-push:
     runs-on: ubuntu-latest
     steps:
-      - name: build
-        run: echo "build is done"
+      - name: run on push 
+        run: echo "push happned to this branch"
