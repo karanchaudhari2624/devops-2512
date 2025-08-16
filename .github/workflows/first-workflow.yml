@@ -1,8 +1,11 @@
-name: on push
-on: push
+name: on spacific branch
+on:
+  push:
+   branches:
+    -main 
 jobs:
-  run-on-push:
+ push-main:
     runs-on: ubuntu-latest
-    steps:
+     steps:
       - name: run on push 
         run: echo "push happned to this branch"
