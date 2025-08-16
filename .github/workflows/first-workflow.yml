@@ -1,6 +1,6 @@
-name: on spacific branch
+name: on pull request
 on:
-  push:
+  pull_request:
     branches:
       - main 
 jobs:
@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run on push 
-        run: echo "push happned to this main branch"
+        run: echo "pull request created"
