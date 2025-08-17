@@ -1,0 +1,16 @@
+name: Jobs & Steps
+
+on: workflow_dispatch 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build started
+        run: echo "build started"
+
+      - name: clone the code
+        run: git clone https://github.com/karanchaudhari2624/devops-2512.git
+
+      - name: check the code 
+        run: ls -la
