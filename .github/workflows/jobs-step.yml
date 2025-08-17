@@ -2,21 +2,38 @@ name: jobs & steps
 
 on: workflow_dispatch
 
-env:       #globl veriable 
+# global variable
+env:
   GREETINGS: "welcome to github actions"
 
 jobs:
   greetings:
+    env:
+      WELCOME: "welcome to devops-2512"
     runs-on: ubuntu-latest
     steps:
       - name: calling variable
         run: echo "$GREETINGS"
+
+      - name: calling job specific variable
+        run: echo "$WELCOME"
+
+      - name: calling step specific variable
+        run: echo "$TRAINER"
+        env:
+          TRAINER: "hello everyone myself Murali"
+
+      - name: calling step variable
+        run: echo "$TRAINER"
 
   build:
     runs-on: ubuntu-latest
     steps:
       - name: build started
         run: echo "build started"
+
+      - name: calling job specific variable
+        run: echo "$WELCOME"
 
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -32,8 +49,17 @@ jobs:
         run: echo "testing is completed"
 
   deploy:
+    env:
+      DB_NAME: mydb
+      PORT: 5432
+      DB_USER: postgres
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: deployment
         run: echo "deployment completed"
+
+      - name: Connect Database
+        run: echo "connect database at $DB_NAME//$DB_USER:$DB_PASSWORD@$PORT"
+        env:
+          DB_PASSWORD: Admin123
