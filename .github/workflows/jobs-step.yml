@@ -13,4 +13,4 @@ jobs:
         run: git clone https://github.com/karanchaudhari2624/devops-2512.git
 
       - name: check the code 
-        run: ls -la
+        run: cd devops-2512 && ls -`a
