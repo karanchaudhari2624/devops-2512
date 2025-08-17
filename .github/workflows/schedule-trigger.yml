@@ -1,8 +1,6 @@
 name: Scheduled workfolw
 
-on:
-  schedule:
-    - cron: '*/2 * * * *'  # Every day at 02:00 UTC
+on: workflow_dispatch
 
 jobs:
   scheduled-job:
