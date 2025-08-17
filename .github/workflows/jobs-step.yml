@@ -9,8 +9,8 @@ jobs:
       - name: build started
         run: echo "build started"
 
-      - name: clone the code
-        run: git clone https://github.com/karanchaudhari2624/devops-2512.git
+      - name: Checkout
+        uses: actions/checkout@v5.0.0
 
       - name: check the code 
         run: cd devops-2512 && ls -a
