@@ -2,7 +2,7 @@ name: jobs & steps
 
 on: workflow_dispatch
 
-env:
+env:       #globl veriable 
   GREETINGS: "welcome to github actions"
 
 jobs:
