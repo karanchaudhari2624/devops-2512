@@ -1,0 +1,13 @@
+name: self runner
+
+on: workflow_dispatch
+
+jobs:
+  my-runner:
+    runs-on: myrunner   # <-- this refers to your self-hosted runner label
+    steps:
+      - name: running on my runner
+        run: pwd
+
+      - name: create folder
+        run: mkdir my-folder
