@@ -4,10 +4,10 @@ on: workflow_dispatch
 
 jobs:
   my-runner:
-    runs-on: myrunner   # <-- this refers to your self-hosted runner label
+    runs-on: build-runner   # <-- self-hosted runner label (must match the label you gave during runner setup)
     steps:
-      - name: running on my runner
-        run: pwd
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
 
-      - name: create folder
-        run: mkdir my-folder
+      - name: list files
+        run: ls -a
